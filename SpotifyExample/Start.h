@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Spotify/Spotify.h>
 
-@interface Start : UIViewController
+@interface Start : UIViewController <SPTAudioStreamingDelegate>
 
+@property (strong, nonatomic) IBOutlet UILabel *songName;
+
+- (IBAction)play:(id)sender;
+- (IBAction)stop:(id)sender;
+- (IBAction)next:(id)sender;
+- (IBAction)prev:(id)sender;
 
 @end
 
