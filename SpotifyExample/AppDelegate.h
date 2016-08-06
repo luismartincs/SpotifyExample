@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import <Spotify/Spotify.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate,SPTAudioStreamingDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
