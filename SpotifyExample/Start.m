@@ -55,6 +55,7 @@
      return;
      }
      }];*/
+    NSLog(@"Log");
     NSURL *playlist = [NSURL URLWithString:@"spotify:user:luis_martin:playlist:7w5i5cvxXDtbyLocNFqxqk"];
     
     
@@ -69,6 +70,8 @@
             return;
         }
         
+        NSLog(@"playlist");
+
         self.playlistSnapshot = [SPTPlaylistSnapshot playlistSnapshotFromData:data withResponse:response error:nil];
         
         [self.player playURIs:self.playlistSnapshot.firstTrackPage.items fromIndex:0 callback:nil];
@@ -94,7 +97,6 @@
 - (IBAction)stop:(id)sender {
     [self.player setIsPlaying:NO callback:nil];
     _songName.text = @"None";
-    [self.player logout];
 }
 
 - (IBAction)next:(id)sender {
